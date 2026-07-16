@@ -55,6 +55,17 @@ def merge(left, right):
     return l
 
 
-alist =[54,26,93,17,77,31,44,55,20]
+"""alist =[54,26,93,17,77,31,44,55,20]
 l = merge_sort(alist)
 print(l)
+"""
+
+def verify_sorted(list):
+    n = len(list)
+    if n == 0 or n == 1:
+        return True
+    return list[0] < list[1] and verify_sorted(list[1:])
+alist =[54,26,93,17,77,31,44,55,20]
+l = merge_sort(alist)
+print(verify_sorted(alist))
+print(verify_sorted(l))
